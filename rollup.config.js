@@ -55,6 +55,6 @@ export default {
     html(),
     copyStatic(),
     isWatch && serve({ contentBase: "public", port: 3000 }),
-    isWatch && livereload("public"),
+    isWatch && livereload("src"),
   ].filter(Boolean),
 };
