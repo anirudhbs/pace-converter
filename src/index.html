@@ -10,7 +10,6 @@
     <div class="p-4 rounded-lg w-full max-w-xs">
       <h1 class="text-xl font-bold mb-4">Pace Converter</h1>
       <form id="pace-form" class="mb-4">
-        <label class="block text-sm font-medium mb-1">Pace (per km)</label>
         <div class="flex gap-2 mb-2">
           <div>
             <label class="block text-sm font-medium">Mins</label>
@@ -31,6 +30,17 @@
               class="w-20 border border-black px-2 py-1"
             />
           </div>
+          <div>
+            <label class="block text-sm font-medium">Distance</label>
+            <select id="distance-select" class="border border-black px-2 py-1">
+              <option value="km" selected>km</option>
+              <option value="mile">mile</option>
+              <option value="5">5 km</option>
+              <option value="10">10 km</option>
+              <option value="21.1">21.1 km</option>
+              <option value="42.2">42.2 km</option>
+            </select>
+          </div>
         </div>
         <button type="submit" class="px-4 py-2 bg-black text-white">
           Submit
@@ -42,44 +52,46 @@
             <th class="py-2 px-4 text-left text-gray-600 font-medium w-20">
               Distance
             </th>
-            <th class="py-2 px-4 text-left text-gray-600 font-medium w-20">Time</th>
+            <th class="py-2 px-4 text-left text-gray-600 font-medium w-20">
+              Time
+            </th>
           </tr>
         </thead>
         <tbody id="pace-table">
           <tr class="">
-            <td class="py-2 px-4 w-20">200m</td>
+            <td class="py-2 px-4 w-20">200 m</td>
             <td id="time-0" class="py-2 px-4 w-20"></td>
           </tr>
           <tr class="">
-            <td class="py-2 px-4 w-20">400m</td>
+            <td class="py-2 px-4 w-20">400 m</td>
             <td id="time-1" class="py-2 px-4 w-20"></td>
           </tr>
           <tr class="">
-            <td class="py-2 px-4 w-20">800m</td>
+            <td class="py-2 px-4 w-20">800 m</td>
             <td id="time-2" class="py-2 px-4 w-20"></td>
           </tr>
           <tr class="">
-            <td class="py-2 px-4 w-20">1000m</td>
+            <td class="py-2 px-4 w-20">1 km</td>
             <td id="time-3" class="py-2 px-4 w-20"></td>
           </tr>
           <tr class="">
-            <td class="py-2 px-4 w-20">1600m</td>
+            <td class="py-2 px-4 w-20">1 mile</td>
             <td id="time-4" class="py-2 px-4 w-20"></td>
           </tr>
           <tr class="">
-            <td class="py-2 px-4 w-20">5km</td>
+            <td class="py-2 px-4 w-20">5 km</td>
             <td id="time-5" class="py-2 px-4 w-20"></td>
           </tr>
           <tr class="">
-            <td class="py-2 px-4 w-20">10km</td>
+            <td class="py-2 px-4 w-20">10 km</td>
             <td id="time-6" class="py-2 px-4 w-20"></td>
           </tr>
           <tr class="">
-            <td class="py-2 px-4 w-20">21.1km</td>
+            <td class="py-2 px-4 w-20">21.1 km</td>
             <td id="time-7" class="py-2 px-4 w-20"></td>
           </tr>
           <tr class="">
-            <td class="py-2 px-4 w-20">42.2km</td>
+            <td class="py-2 px-4 w-20">42.2 km</td>
             <td id="time-8" class="py-2 px-4 w-20"></td>
           </tr>
         </tbody>
