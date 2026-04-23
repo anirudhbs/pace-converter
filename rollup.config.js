@@ -3,7 +3,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import terser from "@rollup/plugin-terser";
 import serve from "rollup-plugin-serve";
 import livereload from "rollup-plugin-livereload";
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, cpSync } from "fs";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 
@@ -24,6 +24,20 @@ function html() {
   };
 }
 
+function copyPublic() {
+  return {
+    name: "copyPublic",
+    writeBundle() {
+      const src = join(__dirname, "public");
+      const dest = join(__dirname, "dist");
+      if (!existsSync(dest)) mkdirSync(dest, { recursive: true });
+      if (existsSync(src)) {
+        cpSync(src, dest, { recursive: true });
+      }
+    },
+  };
+}
+
 const isWatch = process.argv.includes("-w");
 
 export default {
@@ -39,6 +53,7 @@ export default {
     resolve(),
     terser(),
     html(),
+    copyPublic(),
     isWatch && serve({ contentBase: "dist", port: 3000 }),
     isWatch && livereload("dist"),
   ].filter(Boolean),
