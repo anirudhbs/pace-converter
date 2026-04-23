@@ -19,15 +19,13 @@ function formatTime(totalSeconds) {
   return `${m}:${s.toString().padStart(2, "0")}`;
 }
 
-const inputs = document.querySelectorAll(".time-input");
-inputs.forEach((input) => {
-  input.addEventListener("change", () => {
-    const seconds = parseTime(input.value);
-    if (!seconds) return;
-    const idx = [...inputs].indexOf(input);
-    const pacePerKm = seconds / distances[idx];
-    inputs.forEach((other, i) => {
-      other.value = formatTime(pacePerKm * distances[i]);
-    });
-  });
+const form = document.getElementById("pace-form");
+const minutesInput = document.getElementById("minutes-input");
+const secondsInput = document.getElementById("seconds-input");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const minutes = parseInt(minutesInput.value) || 0;
+  const seconds = parseInt(secondsInput.value) || 0;
+  console.log(`Minutes: ${minutes}, Seconds: ${seconds}`);
 });
