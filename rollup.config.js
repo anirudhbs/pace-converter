@@ -48,6 +48,9 @@ export default {
     entryFileNames: "[name].js",
     assetFileNames: "[name][extname]",
   },
+  watch: {
+    exclude: ["public/**"],
+  },
   plugins: [
     postcss({ extract: "styles.css", minimize: true }),
     resolve(),
