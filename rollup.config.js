@@ -14,22 +14,22 @@ function html() {
     name: "html",
     writeBundle() {
       const html = readFileSync(join(__dirname, "src/index.html"), "utf-8");
-      const dist = join(__dirname, "dist");
-      if (!existsSync(dist)) mkdirSync(dist, { recursive: true });
+      const publicDir = join(__dirname, "public");
+      if (!existsSync(publicDir)) mkdirSync(publicDir, { recursive: true });
       const processed = html
         .replace("./main.js", "./main.js")
         .replace("./css/styles.css", "./styles.css");
-      writeFileSync(join(dist, "index.html"), processed);
+      writeFileSync(join(publicDir, "index.html"), processed);
     },
   };
 }
 
-function copyPublic() {
+function copyStatic() {
   return {
-    name: "copyPublic",
+    name: "copyStatic",
     writeBundle() {
-      const src = join(__dirname, "public");
-      const dest = join(__dirname, "dist");
+      const src = join(__dirname, "static");
+      const dest = join(__dirname, "public");
       if (!existsSync(dest)) mkdirSync(dest, { recursive: true });
       if (existsSync(src)) {
         cpSync(src, dest, { recursive: true });
@@ -43,7 +43,7 @@ const isWatch = process.argv.includes("-w");
 export default {
   input: "src/main.js",
   output: {
-    dir: "dist",
+    dir: "public",
     format: "es",
     entryFileNames: "[name].js",
     assetFileNames: "[name][extname]",
@@ -53,8 +53,8 @@ export default {
     resolve(),
     terser(),
     html(),
-    copyPublic(),
-    isWatch && serve({ contentBase: "dist", port: 3000 }),
-    isWatch && livereload("dist"),
+    copyStatic(),
+    isWatch && serve({ contentBase: "public", port: 3000 }),
+    isWatch && livereload("public"),
   ].filter(Boolean),
 };

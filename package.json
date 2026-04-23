@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c",
-    "start": "npm run build && serve dist",
-    "preview": "serve dist",
-    "deploy": "npm run build && gh-pages -d dist",
+    "start": "npm run build && serve public",
+    "preview": "serve public",
+    "deploy": "npm run build && gh-pages -d public",
     "format": "prettier --write ."
   },
   "devDependencies": {
