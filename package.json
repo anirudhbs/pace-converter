@@ -2,29 +2,20 @@
   "name": "pace-converter",
   "version": "1.0.0",
   "type": "module",
-  "description": "A simple pace converter tool built with Rollup and Tailwind",
+  "description": "A simple pace converter tool built with Vite and Tailwind",
   "scripts": {
-    "dev": "rollup -c -w",
-    "build": "rollup -c",
-    "start": "npm run build && serve public",
-    "preview": "serve public",
-    "deploy": "npm run build && gh-pages -d public",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "format": "prettier --write ."
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^16.0.3",
-    "@rollup/plugin-terser": "^1.0.0",
     "@tailwindcss/postcss": "^4.2.2",
-    "@web/rollup-plugin-html": "^3.1.0",
     "autoprefixer": "^10.5.0",
-    "gh-pages": "^6.3.0",
     "postcss": "^8.5.10",
     "prettier": "3.8.3",
-    "rollup": "^4.60.2",
-    "rollup-plugin-livereload": "^2.0.5",
-    "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-serve": "^3.0.0",
-    "serve": "^14.2.6",
-    "tailwindcss": "^4.2.2"
+    "tailwindcss": "^4.2.2",
+    "vite": "^8.0.10",
+    "vite-plugin-static-copy": "^4.1.0"
   }
 }
