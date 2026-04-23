@@ -8,16 +8,9 @@
   </head>
   <body class="min-h-screen">
     <div class="p-4 rounded-lg w-full max-w-xs">
-      <table class="w-full border-collapse border border-black">
-        <thead>
-          <tr class="border border-black">
-            <th class="py-2 px-4 text-left text-gray-600 font-medium border border-black">
-              Distance
-            </th>
-            <th class="py-2 px-4 text-left text-gray-600 font-medium border border-black">Time</th>
-          </tr>
-        </thead>
-        <form id="pace-form" class="mb-4">
+      <h1 class="text-xl font-bold mb-4">Pace Converter</h1>
+      <form id="pace-form" class="mb-4">
+        <label class="block text-sm font-medium mb-1">Pace</label>
         <div class="flex gap-2 mb-2">
           <div>
             <label class="block text-sm font-medium">Mins</label>
@@ -38,7 +31,16 @@
         </div>
         <button type="submit" class="px-4 py-2 bg-black text-white">Submit</button>
       </form>
-      <tbody id="pace-table">
+      <table class="w-full border-collapse border border-black">
+        <thead>
+          <tr class="border border-black">
+            <th class="py-2 px-4 text-left text-gray-600 font-medium border border-black">
+              Distance
+            </th>
+            <th class="py-2 px-4 text-left text-gray-600 font-medium border border-black">Time</th>
+          </tr>
+        </thead>
+        <tbody id="pace-table">
           <tr class="border border-black">
             <td class="py-2 px-4 border border-black">200m</td>
             <td id="time-0" class="py-2 px-4 border border-black"></td>
