@@ -10,7 +10,7 @@
     <div class="p-4 rounded-lg w-full max-w-xs">
       <h1 class="text-xl font-bold mb-4">Pace Converter</h1>
       <form id="pace-form" class="mb-4">
-        <label class="block text-sm font-medium mb-1">Pace</label>
+        <label class="block text-sm font-medium mb-1">Pace (per km)</label>
         <div class="flex gap-2 mb-2">
           <div>
             <label class="block text-sm font-medium">Mins</label>
@@ -32,53 +32,55 @@
             />
           </div>
         </div>
-        <button type="submit" class="px-4 py-2 bg-black text-white">Submit</button>
+        <button type="submit" class="px-4 py-2 bg-black text-white">
+          Submit
+        </button>
       </form>
-      <table class="w-full border-collapse border border-black">
+      <table class="w-full border-collapse">
         <thead>
-          <tr class="border border-black">
-            <th class="py-2 px-4 text-left text-gray-600 font-medium border border-black w-20">
+          <tr class="">
+            <th class="py-2 px-4 text-left text-gray-600 font-medium w-20">
               Distance
             </th>
-            <th class="py-2 px-4 text-left text-gray-600 font-medium border border-black">Time</th>
+            <th class="py-2 px-4 text-left text-gray-600 font-medium w-20">Time</th>
           </tr>
         </thead>
         <tbody id="pace-table">
-          <tr class="border border-black">
-            <td class="py-2 px-4 border border-black w-20">200m</td>
-            <td id="time-0" class="py-2 px-4 border border-black"></td>
+          <tr class="">
+            <td class="py-2 px-4 w-20">200m</td>
+            <td id="time-0" class="py-2 px-4 w-20"></td>
           </tr>
-          <tr class="border border-black">
-            <td class="py-2 px-4 border border-black w-20">400m</td>
-            <td id="time-1" class="py-2 px-4 border border-black"></td>
+          <tr class="">
+            <td class="py-2 px-4 w-20">400m</td>
+            <td id="time-1" class="py-2 px-4 w-20"></td>
           </tr>
-          <tr class="border border-black">
-            <td class="py-2 px-4 border border-black w-20">800m</td>
-            <td id="time-2" class="py-2 px-4 border border-black"></td>
+          <tr class="">
+            <td class="py-2 px-4 w-20">800m</td>
+            <td id="time-2" class="py-2 px-4 w-20"></td>
           </tr>
-          <tr class="border border-black">
-            <td class="py-2 px-4 border border-black w-20">1000m</td>
-            <td id="time-3" class="py-2 px-4 border border-black"></td>
+          <tr class="">
+            <td class="py-2 px-4 w-20">1000m</td>
+            <td id="time-3" class="py-2 px-4 w-20"></td>
           </tr>
-          <tr class="border border-black">
-            <td class="py-2 px-4 border border-black w-20">1600m</td>
-            <td id="time-4" class="py-2 px-4 border border-black"></td>
+          <tr class="">
+            <td class="py-2 px-4 w-20">1600m</td>
+            <td id="time-4" class="py-2 px-4 w-20"></td>
           </tr>
-          <tr class="border border-black">
-            <td class="py-2 px-4 border border-black w-20">5km</td>
-            <td id="time-5" class="py-2 px-4 border border-black"></td>
+          <tr class="">
+            <td class="py-2 px-4 w-20">5km</td>
+            <td id="time-5" class="py-2 px-4 w-20"></td>
           </tr>
-          <tr class="border border-black">
-            <td class="py-2 px-4 border border-black w-20">10km</td>
-            <td id="time-6" class="py-2 px-4 border border-black"></td>
+          <tr class="">
+            <td class="py-2 px-4 w-20">10km</td>
+            <td id="time-6" class="py-2 px-4 w-20"></td>
           </tr>
-          <tr class="border border-black">
-            <td class="py-2 px-4 border border-black w-20">21.1km</td>
-            <td id="time-7" class="py-2 px-4 border border-black"></td>
+          <tr class="">
+            <td class="py-2 px-4 w-20">21.1km</td>
+            <td id="time-7" class="py-2 px-4 w-20"></td>
           </tr>
-          <tr class="border border-black">
-            <td class="py-2 px-4 border border-black w-20">42.2km</td>
-            <td id="time-8" class="py-2 px-4 border border-black"></td>
+          <tr class="">
+            <td class="py-2 px-4 w-20">42.2km</td>
+            <td id="time-8" class="py-2 px-4 w-20"></td>
           </tr>
         </tbody>
       </table>
