@@ -22,10 +22,15 @@ function formatTime(totalSeconds) {
 const form = document.getElementById("pace-form");
 const minutesInput = document.getElementById("minutes-input");
 const secondsInput = document.getElementById("seconds-input");
+const inputs = document.querySelectorAll(".time-input");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const minutes = parseInt(minutesInput.value) || 0;
   const seconds = parseInt(secondsInput.value) || 0;
-  console.log(`Minutes: ${minutes}, Seconds: ${seconds}`);
+  const pacePerKm = minutes * 60 + seconds;
+  inputs.forEach((input, i) => {
+    const totalSeconds = pacePerKm * distances[i];
+    input.value = formatTime(totalSeconds);
+  });
 });
