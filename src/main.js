@@ -15,6 +15,7 @@ const form = document.getElementById("pace-form");
 const minutesInput = document.getElementById("minutes-input");
 const secondsInput = document.getElementById("seconds-input");
 const distanceSelect = document.getElementById("distance-select");
+const paceLabel = document.getElementById("pace-label");
 const timeCells = Array.from(document.querySelectorAll("[id^=time-]"));
 
 const kmConversions = {
@@ -25,6 +26,10 @@ const kmConversions = {
   21.1: 21.1,
   42.2: 42.2,
 };
+
+distanceSelect.addEventListener("change", () => {
+  paceLabel.textContent = distanceSelect.options[distanceSelect.selectedIndex].text;
+});
 
 distanceSelect.dispatchEvent(new Event("change"));
 
@@ -41,3 +46,7 @@ form.addEventListener("submit", (e) => {
     cell.textContent = formatTime(totalSeconds);
   });
 });
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js");
+}
